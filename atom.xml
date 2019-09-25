@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jakey.vip/"/>
-  <updated>2019-07-30T12:10:02.653Z</updated>
+  <updated>2019-09-25T12:36:23.822Z</updated>
   <id>http://jakey.vip/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://jakey.vip/2019/09/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    <id>http://jakey.vip/2019/09/25/机器学习——神经网络/</id>
+    <published>2019-09-25T12:38:02.703Z</published>
+    <updated>2019-09-25T12:36:23.822Z</updated>
+    
+    <content type="html"><![CDATA[<p>@<a href="机器学习--神经网络">TOC</a></p><h1 id="什么是神经网络"><a href="#什么是神经网络" class="headerlink" title="什么是神经网络"></a>什么是神经网络</h1><p>神经网络，是借鉴了生物神经网络的工作原理形成的一种数学模型，是机器学习算法中的一种，既可以用来做有监督的任务，如分类、视觉识别等，也可以用来做无监督的任务。同时能处理复杂的非线性问题，基本结构是神经元。<br>基本结构为：</p><blockquote><p>输入（树突）——&gt;处理（神经元）——&gt;输出（轴突）</p></blockquote><p>如图：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTgxMjExLzIwMTgwNi85ODEyMTEtMjAxODA2MTkyMjQyNDQ0MTgtNTY0MDAyNjM5LnBuZw?x-oss-process=image/format,png" alt="Alt"><br>多个神经元组成的就是神经网络：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTgxMjExLzIwMTgwNi85ODEyMTEtMjAxODA2MTkyMjQ2MTg1NzQtMTM1MDUyNTE3MS5wbmc?x-oss-process=image/format,png" alt="Alt"><br>这是一个4层结构的神经网络，ayer1为输入层，layer4为输出层，layer2,layer3为隐藏层，即神经网络的结构由输入层，隐藏层，输出层构成。其中除了输入层以外，每一层的输入都是上一层的输出。</p><h1 id="神经网络数学原理"><a href="#神经网络数学原理" class="headerlink" title="神经网络数学原理"></a>神经网络数学原理</h1><p>单个神经元的组成包含两部分，权重和偏置，每个输入值进入神经元都会进行y=wx+b的计算，其中w为权重，b为偏置，x为输出值，y为单个输出值的结果，经过激活函数即神经元后输出结果为f(wx+b)，f为激活函数，如果有多个输入值的话输出值为f(w1x1+w2x2+…+wnxn)。</p><h2 id="激活函数的作用"><a href="#激活函数的作用" class="headerlink" title="激活函数的作用"></a>激活函数的作用</h2><p>激活函数也称为映射函数，可以对计算结果进行非线性转换，提升神经网络的表达能力，从而能够处理线性不可分的问题，比如语音识别和图像识别等，常见的激活函数有sigmoid,tanh,relu…等等。</p><h2 id="sigmoid激活函数"><a href="#sigmoid激活函数" class="headerlink" title="sigmoid激活函数"></a>sigmoid激活函数</h2><p>表达式为：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTgxMjExLzIwMTgwNi85ODEyMTEtMjAxODA2MjUyMzAwMjMyMjQtNTI1MzM3NDQxLnBuZw?x-oss-process=image/format,png" alt="Alt"><br>其图形为一个s型曲线，会将所有的输入结果映射到0-1之间，图形样式如下：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTgxMjExLzIwMTgwNi85ODEyMTEtMjAxODA2MjUyMzAyMTUwMDAtMTQyMTczMDIzNy5wbmc?x-oss-process=image/format,png" alt="Alt"><br>sigmoid通常用于处理分类问题，如逻辑回归算法就是使用sigmoid处理分类问题。</p><h2 id="tanh激活函数"><a href="#tanh激活函数" class="headerlink" title="tanh激活函数"></a>tanh激活函数</h2><p>tanh表达式为：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTgxMjExLzIwMTgwNi85ODEyMTEtMjAxODA2MjYyMTMyNTQ2NzAtNzQ3MTgzMTU5LnBuZw?x-oss-process=image/format,png" alt="Alt"><br>tanh函数的图形和sigmoid类似，不同的是它是将输入值映射到-1<del>1之间。它的图形如下图所示：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTgxMjExLzIwMTgwNi85ODEyMTEtMjAxODA2MjYyMTM0NTg0MTEtMTk1MzE2NjEwLnBuZw?x-oss-process=image/format,png" alt="Alt"><br>由于tanh函数的压缩范围在-1</del>1之间，因而它的输出基本是0均值，即下一层的输入为0均值，这使得tanh函数的收敛速度要快于sigmoid函数。</p><p>假设后层神经元的输入都为正(e.g. x&gt;0 elementwise in f=wTx+b),那么对w求局部梯度则都为正，这样在反向传播的过程中w要么都往正方向更新，要么都往负方向更新，导致有一种捆绑的效果，使得收敛缓慢。这是sigmoid函数容易出现的问题，而tanh函数的映射特点很好的避开了这个问题。因而在实际使用中，人们会更经常使用tanh函数作为激活函数。</p><p>sigmoid函数和tanh函数的共同问题是在求导过程中可能出现梯度消失的现象</p><h2 id="激活函数ReLU"><a href="#激活函数ReLU" class="headerlink" title="激活函数ReLU"></a>激活函数ReLU</h2><p>表达式为：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTgxMjExLzIwMTgwNi85ODEyMTEtMjAxODA2MjYyMTU4MzU3MDMtMTA5NzAyMDk1OC5wbmc?x-oss-process=image/format,png" alt="Alt">图形如下：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTgxMjExLzIwMTgwNi85ODEyMTEtMjAxODA2MjYyMjAxMTM5NzAtMTQ1MDg3NDg0MS5wbmc?x-oss-process=image/format,png" alt="Alt"><br>它相比于sigmoid和tanh有更快的收敛速度，同时不会出现梯度消失的问题。另外从函数表达中可以知道，输入小于0时，输出会变成0，这就使得神经网络变得稀疏，并减少参数的相互依存关系，缓解过拟合问题，而且由于函数的本身特性，不涉及指数等操作，实现起来也更加容易。</p><p>但它也有缺点，ReLU单元脆弱且可能会在训练中死去。例如，大的梯度流经过ReLU单元时可能导致神经不会在以后任何数据节点再被激活。当这发生时，经过此单元的梯度将永远为零。ReLU单元可能不可逆地在训练中的数据流中关闭。例如，比可能会发现当学习速率过快时你40%的网络都“挂了”（神经元在此后的整个训练中都不激活）。当学习率设定恰当时，这种事情会更少出现。</p><h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><p>反向传播的目的在于通过不断的回传误差，对权重进行更新，重新计算输出，最终从已有的输入值经过神经网络得到我们需要的结果。要理解反向传播，我们需要先理解前向传播的过程。</p><p>假设一个三层神经网络，在随机分配获得权重的情况下，数据从输入层——&gt;隐藏层——&gt;输出层过程可以称为前向传播，当然在这个过程中会涉及很多数学计算，最终会在输出层有一个输出值，而输出值和我们需要的目标值或实际值之间一般会存在差距，即我们通常说的误差。</p><p>接下来，根据误差进行反向更新权值的过程就称之为误差的反向传播，要对权值进行更新，我们需要评估权值对误差产生的影响大小，这个通过计算误差对权值的偏导值进行估计，过程中有一个重要的概念是链式法则。</p><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTgxMjExLzIwMTgwNi85ODEyMTEtMjAxODA2MjYyMzM5NDgwNDgtNTE2Njg4NTQ0LnBuZw?x-oss-process=image/format,png" alt="Alt"><br>其中链式求导表现为：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTgxMjExLzIwMTgwNi85ODEyMTEtMjAxODA2MjYyMzMwMjY2NjAtOTA2NTUzMzAucG5n?x-oss-process=image/format,png" alt="Alt"><br>即误差对权值的偏导值可以看成每一个反向计算步骤的偏导值的乘积。</p><p>在得到误差对权值的偏导值后，我们就可以对权值进行更新，更新公式为：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvOTgxMjExLzIwMTgwNi85ODEyMTEtMjAxODA2MjYyMzMzNTQ5OTItNTIzNzQ3MzI0LnBuZw?x-oss-process=image/format,png" alt="Alt"><br>其中n是学习速率。</p><p>按照相同的步骤对所有的权重进行更新，然后再次进行前向传播，获得新误差，再反向传播更新权值，不断的重复这个过程，直到误差达到我们设定的阈值范围结束迭代。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;@&lt;a href=&quot;机器学习--神经网络&quot;&gt;TOC&lt;/a&gt;&lt;/p&gt;&lt;h1 id=&quot;什么是神经网络&quot;&gt;&lt;a href=&quot;#什么是神经网络&quot; class=&quot;headerlink&quot; title=&quot;什么是神经网络&quot;&gt;&lt;/a&gt;什么是神经网络&lt;/h1&gt;&lt;p&gt;神经网络，是借鉴了生物神经网
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>my first blog in jakey</title>
